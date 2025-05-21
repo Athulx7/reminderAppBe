@@ -7,7 +7,8 @@ exports.login = async(req,res)=>{
         const existingUser = await users.findOne({email:email,password:password})
         if(existingUser){
             const token = jwt.sign({userid : existingUser._id},JWT_SECRET)
-            res.status(201).json({data:existingUser,token:token})
+            const {password: _,...withoutPassword} = existingUser.toObject() 
+            res.status(201).json({data:withoutPassword,token:token})
         }
         else{
             res.status(400).json('User Not Found: Invalid email or password')
