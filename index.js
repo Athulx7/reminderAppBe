@@ -3,6 +3,7 @@ require('dotenv').config()
 const cors = require('cors')
 const loginRouter = require('./Router/loginRouter')
 const reminderRouter = require('./Router/reminderRourter')
+const passwordRouter = require('./Router/passwordRouter')
 require('./DB/dbConection')
 
 const reminderServer = express()
@@ -11,6 +12,7 @@ reminderServer.use(express.json())
 
 reminderServer.use(loginRouter)
 reminderServer.use(reminderRouter)
+reminderServer.use(passwordRouter)
 
 const PORT = 3000
 
