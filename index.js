@@ -5,6 +5,7 @@ const loginRouter = require('./Router/loginRouter')
 const reminderRouter = require('./Router/reminderRourter')
 const passwordRouter = require('./Router/passwordRouter')
 require('./DB/dbConection')
+require('./Controllers/ReminderSheduler/reminderEmailSheduler')
 
 const reminderServer = express()
 reminderServer.use(cors())
