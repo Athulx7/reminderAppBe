@@ -47,6 +47,10 @@ const userSchema = new mongoose.Schema({
             enum: ['pink', 'emerald', 'orange', 'yellow'],
             default: 'emerald'
         },
+    },
+    telegramChatId: {
+        type: String,
+        default: null,
     }
 })
 

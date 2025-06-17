@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-cron.schedule('20 19 * * *', async () => {
+cron.schedule('0 7 * * *', async () => {
   console.log('Running daily reminder check at', new Date().toISOString());
 
   try {
